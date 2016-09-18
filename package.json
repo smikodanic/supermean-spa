@@ -1,0 +1,54 @@
+{
+  "name": "supermean-spa",
+  "version": "1.0.0",
+  "author": "Sasa Mikodanic",
+  "license": "MIT",
+  "title": "SuperMEAN-SPA",
+  "description": "SuperMEAN-SPA is MEAN stack framework for fast development of Single Page Apps.",
+  "homepage": "http://www.supermean.org",
+  "main": "index.js",
+  "dependencies": {
+    "angular-passport": "^1.1.4",
+    "chalk": "^0.5.1",
+    "debug": "^2.1.3",
+    "ejs": "^2.5.2",
+    "express": "^4.11.2",
+    "gulp-header": "^1.8.8",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.9.1",
+    "rootpath": "^0.1.2",
+    "serve-favicon": "^2.2.1",
+    "vhost": "^3.0.2"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-htmlmin": "^1.3.0",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-postmortem": "^1.0.5",
+    "gulp-uglify": "^1.5.2",
+    "nodedump": "0.0.8",
+    "rimraf": "^2.5.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/smikodanic/supermean-spa.git"
+  },
+  "keywords": [
+    "mean stack",
+    "mean stack framework",
+    "single page app",
+    "one page app",
+    "angular app",
+    "angularjs app",
+    "supermean",
+    "supermean spa"
+  ]
+}

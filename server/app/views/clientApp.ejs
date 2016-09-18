@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html ng-app="clientApp">
+<head>
+	<base href="/"> <!-- https://docs.angularjs.org/error/$location/nobase -->
+	<meta charset="UTF-8">
+	<title>Client side, one-page app</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="/bower/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/bower/bootstrap/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="/bower/font-awesome/css/font-awesome.min.css">
+
+	<!-- JS -->
+	<script src="/bower/jquery/dist/jquery.min.js"></script>
+	<script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<!-- CSS compiled by SASS -->
+	<link rel="stylesheet" type="text/css" href="/client/dist/css/main.css">
+
+</head>
+
+<body>
+
+	<div class="container-fluid" ui-view></div>
+
+
+	<!-- JS -->
+	<script src="/bower/angular/angular.min.js"></script>
+
+	<!-- JS compiled by browserify -->
+	<script src="/client/dist/js/main.js"></script>
+
+
+</body>
+</html>
