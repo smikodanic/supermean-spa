@@ -34,6 +34,8 @@ Usually tied with [Supermean-API](https://github.com/smikodanic/supermean-api) f
 ```sh
 git clone --depth 1 git@github.com:smikodanic/supermean-spa.git <project-name>
 npm install
+bower install
+gulp default
 ```
 
 &nbsp;
