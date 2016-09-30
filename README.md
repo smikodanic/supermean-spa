@@ -7,6 +7,7 @@ and integrated angular-passport authentication module.
 
 Usually tied with [Supermean-API](https://github.com/smikodanic/supermean-api) framework.
 
+More information on [www.supermean.org](http://www.supermean.org) .
 
 &nbsp;
 
