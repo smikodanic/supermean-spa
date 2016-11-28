@@ -1,33 +1,17 @@
 var gulp = require('gulp');
 
-//GULP Tasks
+
+/***** GULP BASIC TASKS *****/
+gulp.task('nodemon-start', require('./tasks/server-nodemon.js'));
 gulp.task('rimraf', require('./tasks/rimraf.js'));
-// gulp.task('browserify-uglify', require('./tasks/browserify-uglify.js')(gulp));
-gulp.task('browserify', require('./tasks/browserify.js'));
 gulp.task('htmlmin', require('./tasks/htmlmin.js'));
-gulp.task('server-nodemon', require('./tasks/server-nodemon.js')());
-// gulp.task('scss', require('./tasks/scss-compass.js')(gulp));
+gulp.task('browserify', require('./tasks/browserify.js'));
+gulp.task('scss', require('./tasks/scss-sass.js').scss);
+gulp.task('css-minify', require('./tasks/scss-sass.js').cssMinify);
 
 
-var compass = require('gulp-compass');
-gulp.task('scss', function () {
-    'use strict';
-    gulp
-        .src([
-            'client/src/main.scss'
-        ])
-        .pipe(compass({
-            style: 'expanded', //nested, expanded, compact, or compressed
-            comments: false, //show comments or not
-            css: 'client/dist/css', //target dir
-            sass: 'client/src', //source sass/scss files dir
-            logging: true,
-            time: true
-        }));
-});
 
-
-//gulp watchers
+/***** GULP WATCHERS *****/
 gulp.task('watch', function () {
     'use strict';
 
@@ -47,15 +31,27 @@ gulp.task('watch', function () {
 });
 
 
+
+
+/***** GULP COMPOUND TASKS *****/
+
 //first delete then create JS, HTML and CSS files in /client/dist/ directory
 gulp.task('build-dist', ['rimraf'], function () {
     'use strict';
     setTimeout(function () {
         gulp.start('browserify', 'htmlmin', 'scss');
+
+        setTimeout(function () {
+            gulp.start('css-minify');
+        }, 1300);
     }, 1300);
 });
 
 
-
 //defult gulp task
-gulp.task('default', ['build-dist', 'watch', 'nodemon-start']);
+gulp.task('default', ['build-dist', 'watch'], function () {
+    'use strict';
+    setTimeout(function () {
+        gulp.start('nodemon-start');
+    }, 3000);
+});

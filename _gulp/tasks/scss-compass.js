@@ -1,6 +1,8 @@
 /**
  * SCSS compiler
  * Compiles SCSS files into CSS.
+ *
+ * Depreceated!!!
  */
 var compass = require('gulp-compass');
 
