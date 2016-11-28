@@ -1,1 +1,1 @@
-{"version":3,"sources":["main.css","app/app.scss"],"names":[],"mappings":"AAAA;;;;IAII;;ACJJ,OACC,WAAa,CACb;;ADMD,8OAA8O","file":"main.css","sourcesContent":[null,".oboji {\n\tcolor: Brown;\n}\n"]}
+{"version":3,"sources":["main.css","app/app.scss"],"names":[],"mappings":"AAAA;;;;IAII;;ACJJ;EACC,aAAa,EACb;;ADOD,8OAA8O","file":"main.css","sourcesContent":[null,".oboji {\n\tcolor: Brown;\n}\n"]}

@@ -32,7 +32,8 @@ module.exports.scss = function () {
             'client/src/*.scss'
         )
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}))
+        // .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(sass())
         .pipe(header(banner, {pkg: pkg}))
         .pipe(sourcemaps.write({includeContent: false}))
         .pipe(sourcemaps.init({loadMaps: true}))
