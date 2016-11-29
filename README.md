@@ -29,14 +29,13 @@ More information on [www.supermean.org](http://www.supermean.org) .
 
 *Prerequisites*
 * gulp
-* sass , compass and ruby's gem
+* sass and ruby's gem
 
 
-```sh
-git clone --depth 1 git@github.com:smikodanic/supermean-spa.git <project-name>
-npm install
-bower install
-gulp default
+```bash
+npm install -g generator-supermean
+yo supermean
+gulp
 ```
 
 &nbsp;
