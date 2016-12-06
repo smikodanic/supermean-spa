@@ -36,15 +36,14 @@ app.use('/node', express.static(path.join(__dirname, '/../../node_modules')));
 
 //****** CLIENT SIDE ROUTES *****
 // When URL is typed in browser superMEAN serves /views/clientApp.ejs.
+// This code also ensures error 404 to be shown in browser console for bad resource URLs. For example: /client/dist/css/bad.css
 //*******************************
 
 app.use(function (req, res, next) {
     'use strict';
     if (req.url.indexOf('/bower') === -1 && req.url.indexOf('/assets') === -1 && req.url.indexOf('/client') === -1 && req.url.indexOf('/node') === -1) {
-        console.log('SCCES: ', req.url);
         res.render('clientApp');
     } else {
-        console.log('FAILED: ', req.url);
         next();
     }
 });
