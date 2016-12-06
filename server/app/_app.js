@@ -30,6 +30,7 @@ require('./middlewares/favicon.js')(app);
 app.use('/assets', express.static(path.join(__dirname, '/assets')));
 app.use('/bower', express.static(path.join(__dirname, '/../../bower_components')));
 app.use('/client', express.static(path.join(__dirname, '/../../client')));
+app.use('/node', express.static(path.join(__dirname, '/../../node_modules')));
 
 
 
@@ -37,11 +38,26 @@ app.use('/client', express.static(path.join(__dirname, '/../../client')));
 // When URL is typed in browser superMEAN serves /views/clientApp.ejs.
 //*******************************
 
+app.use(function (req, res, next) {
+    'use strict';
+    if (req.url.indexOf('/bower') === -1 && req.url.indexOf('/assets') === -1 && req.url.indexOf('/client') === -1 && req.url.indexOf('/node') === -1) {
+        console.log('SCCES: ', req.url);
+        res.render('clientApp');
+    } else {
+        console.log('FAILED: ', req.url);
+        next();
+    }
+});
+
+
+
+/* Error 404 */
 app.use(function (req, res) {
     'use strict';
-    if (req.url.indexOf('/bower') === -1 && req.url.indexOf('/assets') === -1) {
-        res.render('clientApp');
-    }
+    var vdata = {
+        url: req.url
+    };
+    res.status(404).render('_errors/error404', vdata);
 });
 
 
