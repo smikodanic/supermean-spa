@@ -41,7 +41,7 @@ app.use('/node', express.static(path.join(__dirname, '/../../node_modules')));
 
 app.use(function (req, res, next) {
     'use strict';
-    if (req.url.indexOf('/bower') === -1 && req.url.indexOf('/assets') === -1 && req.url.indexOf('/client') === -1 && req.url.indexOf('/node') === -1) {
+    if (req.url === '/') {
         res.render('clientApp');
     } else {
         next();
