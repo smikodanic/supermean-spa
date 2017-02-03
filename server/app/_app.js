@@ -41,8 +41,24 @@ app.use('/node', express.static(path.join(__dirname, '/../../node_modules')));
 
 app.use(function (req, res, next) {
     'use strict';
-    if (req.url === '/') {
+
+    if (
+        req.url.indexOf('.css') !== -1 ||
+        req.url.indexOf('.js') !== -1 ||
+        req.url.indexOf('.jpg') !== -1 ||
+        req.url.indexOf('.png') !== -1 ||
+        req.url.indexOf('.gif') !== -1
+    ) {
+        next();
+    } else if (
+        req.url.indexOf('/bower') === -1 &&
+        req.url.indexOf('/assets') === -1 &&
+        req.url.indexOf('/client') === -1 &&
+        req.url.indexOf('/node') === -1
+    ) {
         res.render('clientApp');
+        // res.render('clientApp_template_blank');
+        // res.render('clientApp_template_login');
     } else {
         next();
     }
