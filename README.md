@@ -33,9 +33,10 @@ More information on [www.supermean.org](http://www.supermean.org) .
 
 
 ```bash
-npm install -g generator-supermean
-yo supermean
-gulp
+$ git clone git@github.com:smikodanic/supermean-spa.git
+$ cd supermean-spa
+$ rm -rf .git
+$ npm install && bower install
 ```
 
 &nbsp;
